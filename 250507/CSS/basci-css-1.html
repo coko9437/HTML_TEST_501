@@ -6,8 +6,71 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>html 태그는 꾸미는 용도가 아니다.</h2>
+    <!-- 주석, 코드를 읽지않는다.
+    단순, 설명이나 메세지를 전달하는 방법.
+    Ctrl + / 로 주석처리 -->
+    <!-- 1. 인라인, 줄에 속성으로 설정하는 방법, 비추 
+    2. html 파일안에 style 태그를 이용해서 이용하는 방법, 비추, 
+    3. css 파일을 분리해서 작업, 추천 -->
+    <style>
+        /* css 의 기본 문법, 
+        1. 선택자를 선택하구, 선택자 종류가 많습니다. 
+        2. 선택자에 필요한 속성 부여, 색깔, 크기, 배치 */
+        
+        a, h2 {
+            /* 박스 모델에서, 
+            a 태그는 해당 콘텐츠 크기만 차지하고, (인라인 레벨)
+            h2 태그는 한줄 전체를 다 차지함 (블록 레벨)
+            그래서 효과를 가운데정렬을 해도, h2만 적용이 됨 */
+
+            color :rgb(243, 16, 224);
+            /* a 태그 밑줄 없애는 효과 */
+            text-decoration: none; 
+            /* 글자크기도 변경해보기 */
+            font-size: 35px;
+        }
+        
+        /* 클래스 선택자 요소를 이용해서, 꾸미기 작업
+
+        1. 설정하고 싶은 태그 요소에 class 속성 이용
+        2. class ="" 이름지정, 예시) class="saW"
+        3. style 태그 안에서, 클래스 선택자 이용해서 효과주기
+        4. 선택자{ 효과1, 효과2, ...} */
+
+        .saw {color: aqua;
+             font-size: 40px;
+             font-weight: 600;
+        }
+        /* 다중 클래스 선택자 : 점(.) */
+        .saw2 {text-align: center;
+        }
+        /* 아이디 선택자 : 샾(#)*/
+        #active {
+            color: gray;
+        }
+
+    </style>
+        <ol>
+        <!-- 인라인 으로 CSS 적용해보기 -->
+        <li><a href="1.html" style="color: khaki;">HTML</a></li>
+         <!-- css 다중 클래스를 적용시, 클래스명을 공백을 기준으로 새 클래스 추가 -->
+        <li><a href="2.html" class="saw saw2" >CSS</a></li>
+        <li><a href="3.html" class="saw" id="active">JavaScript</a></li>
+        <li><a href="4.html" class="saw2"> Introduce</a></li>
+        </ol>
+
+    <ol>
+        <li><a href="1.html">
+            <font font color="yellow">HTML</font></a></li>
+        <li><a href="2.html">
+            <font font color="green">CSS</font></a></li>
+        <li><a href="3.html">JavaScript</a></li>
+        <li><a href="4.html" class="saw">Introduce</a></li>
+    </ol>
+
+    <h2 class="saw saw2">html 태그는 꾸미는 용도가 아니다.</h2>
     <P>예제로, html에서 단순 글꼴 변경해보기.</P>
     <font color="blue">test font 태그 이용해보기.</font>
+    <p>재사용,유지보수 등 편하게 하기위하여 CSS이용하기</p>
 </body>
 </html>
