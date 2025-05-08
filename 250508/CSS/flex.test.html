@@ -8,19 +8,49 @@
 <body>
     <style>
         .container{
-            /* 기본 방향이 가로방향으로 나열 */
+            height: 1000px;
+            /* 기본 방향이 가로방향으로 나열
+            flex-direction: row; */
             display: flex;
             flex-direction: column;
+            /* flex-wrap: wrap; */
+            /* 방향과 줄넘김 여부를 한번에 작성가능 */
+            /* flex-flow: column wrap; */
+            /* flex-flow: row wrap; */
+
+            정렬은 두가지 (주축 / 교차축)
+
+            /* 1) 주축 정렬
+            justify-content: flex-start(왼쪽 정렬);
+            flex-end(오른쪽 정렬) flex-center(가운데 정렬)
+            baseline(텍스트 기준 정렬)
+
+            2) 교차축 정렬
+            align-items: flex-start(위로 정렬)
+            flex-end(아래로 정렬), flex-center(가운데 정렬)
+            baseline(텍스트 기준 정렬)
+            stretch (길게 늘려서 정렬)
+            space-between 여백 균등정렬
+            space-around 여백 포함하여 중앙 정렬 */
+            justify-content: space-around;
+            align-items:center;
         }
         .box{
             border: 1px solid red;
+            width: 200px;
         }
     </style>
         <div class="container">
             <div class="box">Box 1</div>
             <div class="box">Box 2</div>
             <div class="box">Box 3</div>
-            
+            <div class="box">Box 4</div>
+            <div class="box">Box 5</div>
+            <!-- <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
+            <div class="box">Box 5</div> -->
         </div>
 </body>
 </html>

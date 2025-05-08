@@ -2,69 +2,88 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEB1 - HTML </title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- <style>
-    #grid{
-          border: 3px solid black;
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-    }
-    body{
-      margin: 0;
-    }
-    h1{
-      font-size: 45px;
-      text-align: center;
-      border-bottom: 1px solid gray;
-      margin:0;
-    }
-    #grid ol{
-      /* ol은 블록레벨, width100%임. 가로 한줄전체차지 */
-      /* #grid ol은 아이디 grid인 요소 하위에 있는 ol요소를 가리킴 */
-      margin-top: 0;
-      margin-left: 20px;
-      border-right: 1px solid gray;
-      width: 100px;
-      padding: 20px;
-    }
-    #article{
-      padding-left: 25px;
-    }
-  </style> -->
-  <h1><a href="index.html">WEB</a></h1>
-  <div id="grid">
-          <ol>
-              <li><a href="1.html">HTML</a></li>
-              <li><a href="2.html">CSS</a></li>
-              <li><a href="3.html">JavaScript</a></li>
-          </ol>
-      <div id="ARTICLE">
-      <h2>HTML이란 무엇인가?</h2>
-      <p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/" title="HTML5 specification">Hypertext Markup
-              Language(HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web
-          applications.
-          Web browsers receive HTML documents from a web server or from local storage and render the documents into
-          multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for
-          the
-          appearance of the document.</p>
-      <img src="coding.jpg" width="100%">
-      <p style="margin-top: 40px;">
-          HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as
-          interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents
-          by
-          denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML
-          elements are
-          delineated by tags, written using angle brackets.
-      </p>
+    
+    <!-- 최종, css 파일을 분리해서 사용함, 
+    왜? 각 <style>를 1~5, index 파일에 모두 다 붙여넣기해야함. 
+        그런데 파일 분리를 하면, 해당 파일을 불러오는 코드 
+         한줄만 있으면 됩니다. 
+         예시 )  <link rel="stylesheet" href="css/style.css" /> -->
+    <style>
+        #grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 45px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+            margin: 0;
+        }
+
+        #grid ol {
+            /* ol , 모든 ol 요소를 의미, 
+        #grid ol , 아이디 grid 인 요소 하위에 있는 ol 요소를 가리킴 */
+            /* ol 은 기본, 블록 레벨, width 100%, 가로 한줄 전체 차지 */
+            border-right: 1px solid gray;
+            width: 100px;
+            margin-left: 20px;
+            margin-top: 0;
+            padding: 20px;
+
+        }
+
+        #article {
+            padding-left: 25px;
+        }
+    </style>
+    <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+        </ol>
+        <div id="article">
+            <h2>HTML이란 무엇인가?</h2>
+            <p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/" title="HTML5 specification">Hypertext Markup
+                    Language(HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong>
+                and
+                web
+                applications.
+                Web browsers receive HTML documents from a web server or from local storage and render the documents
+                into
+                multimedia web pages. HTML describes the structure of a web page semantically and originally included
+                cues
+                for
+                the
+                appearance of the document.</p>
+            <img src="coding.jpg" width="100%">
+            <p style="margin-top: 40px;">
+                HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such
+                as
+                interactive forms may be embedded into the rendered page. HTML provides a means to create structured
+                documents
+                by
+                denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other
+                items.
+                HTML
+                elements are
+                delineated by tags, written using angle brackets.
+            </p>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>
