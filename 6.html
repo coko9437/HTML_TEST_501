@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드를 활용한 반응형 사진첩 예시</title>
+</head>
+
+<body>
+    <style>
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 1px;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            /* grid-template-columns: repeat(컬럼의 갯수, 크기); */
+            /* auto-fit : 자동으로 열의 갯수 지정 */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            /* row-gap: 20px; 행 간격 띄우기 */
+            /* column-gap: 20px; 열 간격 띄우기 */
+            gap: 20px;
+            /* grid-template-rows: repeat(auto-fit,minmax(200px,1fr)); */
+        }
+
+        .margin {
+            margin: 30px;
+            padding-bottom: 20px;
+        }
+
+        .gallery img {
+            width: 30%;
+            height: 150px;
+            object-fit: cover;
+            /* 이미지 비율 유지하며 채우기 */
+        }
+
+        #grid ol {
+            /* ol은 블록레벨, width100%임. 가로 한줄전체차지 */
+            /* #grid ol은 아이디 grid인 요소 하위에 있는 모든 ol요소를 가리킴 */
+            /* grid>ol */
+            margin-top: 0;
+            margin-left: 15px;
+            border-right: 2px solid black;
+            width: 140px;
+            padding: 20px;
+        }
+
+        #article {
+            padding-left: 70px;
+            padding-top: 20px;
+        }
+    </style>
+    <h1>미니실습_250508</h1>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html">
+                    <font font color="red">HTML</font>
+                </a></li>
+            <li><a href="2.html">
+                    <font font color="orange">CSS</font>
+                </a></li>
+            <li><a href="3.html">
+                    <font font color="yellow">JavaScript</font>
+                </a></li>
+            <li><a href="4.html">
+                    <font font color="green">Introduce</font>
+                </a></li>
+            <li><a href="5.html">
+                    <font font color="purple">CSS_Introduce</font>
+                </a></li>
+            <li><a href="6.html">
+                    <font font color="pink">1개박스 2개영역</font>
+                </a></li>
+            <li><a href="7.html">
+                    <font font color="blue">각각의박스 2개영역</font>
+                </a></li>
+            <li><a href="7A.animation.html">
+                    <font font color="blueviolet">애니메이션효과</font>
+                </a></li>
+        </ol>
+        <div id="article">
+            <h2 class="margin">사진 갤러리</h2><br>
+            <div class="gallery">
+                <div>
+                    <img src="img/deer.jpg" alt="사슴">
+                    <img src="img/fox.jpg" alt="여우">
+                    <img src="img/lion.jpg" alt="사자">
+                    <img src="img/rabbit.jpg" alt="토끼">
+                    <img src="img/raccoon.jpg" alt="너구리">
+                    <img src="img/wolf.jpg" alt="늑대">
+                </div>
+
+            </div>
+
+
+            <br>
+            <div>
+                <h2 class="margin">상품 목록</h2>
+                <div class="gallery">
+                    <div>
+                        <img src="img/avocado.jpg" alt="아보카도">
+                        <img src="img/banana.jpg" alt="바나나">
+                        <img src="img/camera.jpg" alt="카메라">
+                        <img src="img/melon.jpg" alt="멜론">
+                        <img src="img/tape.jpg" alt="테이프">
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

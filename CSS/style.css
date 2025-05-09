@@ -1,43 +1,55 @@
-#grid{
-    border: 3px solid black;
+#grid {
+    /* border: 3px solid black; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 150px 1fr;
 }
-body{
-    /* margin: 0; */
-    margin-top: 0;
+
+body {
+    margin: 0;
+    /* margin-top: 0;
     margin-left: 0;
-    margin-bottom: 0;
+    margin-bottom: 0; */
 }
-h1{
+
+h1 {
     font-size: 45px;
     text-align: center;
     border-bottom: 1px solid gray;
-    margin:0;
+    margin: 0;
 }
-#grid>ol{
-/* ol은 블록레벨, width100%임. 가로 한줄전체차지 */
-/* #grid ol은 아이디 grid인 요소 하위에 있는 모든 ol요소를 가리킴 */
-/* grid>ol */
+
+#grid ol {
+    /* ol은 블록레벨, width100%임. 가로 한줄전체차지 */
+    /* #grid ol은 아이디 grid인 요소 하위에 있는 모든 ol요소를 가리킴 */
+    /* grid>ol */
     margin-top: 0;
-    margin-left: 20px;
-    border-right: 1px solid gray;
-    width: 100px;
+    margin-left: 15px;
+    border-right: 2px solid black;
+    width: 140px;
     padding: 20px;
 }
-#article{
-    padding-left: 10px;
+
+#article {
+    padding-left: 70px;
     padding-top: 20px;
 }
-#box2_inline > h2{
+
+.center {
+    text-align: center;
+}
+
+/*
+#box2_inline h2 {
     margin-top: 100px;
 }
+
 .saw {
     border: 5px solid red;
     padding: 0;
     margin-top: 30px;
 }
-.container{
+*/
+.container {
     display: flex;
     flex-direction: column;
 }
