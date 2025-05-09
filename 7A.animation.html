@@ -55,6 +55,8 @@
             padding: 20px;
         }
 
+        /* 애니메이션 설정 후 적용해보기 */
+        /*---------------- 순서1. 설정, 정의 --------------*/
         @keyframes fadeSlideIn {
 
             /* 초기 중간 마지막 단계 총3단계를 화면에 표시 */
@@ -109,9 +111,13 @@
             /*계속 진행할지? 멈출지?*/
         }
 
+        .img-hover-effect:hover {
+            transform: scale(1.1);
+        }
+
         .img-wrapper:hover {
             background-color: aqua;
-            transform: scale(1.2);
+            /* transform: scale(1.2); */
             /* transform: rotate(45deg); */
             /* transition-duration: 0.5s;
             transition-timing-function: ease-in-out;
@@ -130,7 +136,7 @@
         }
 
         .test1 {
-            border: 2px solid blue;
+            border: 2px solid black;
         }
     </style>
 
@@ -166,23 +172,41 @@
         <div class="container">
             <h2 class="center">사진 갤러리</h2><br>
             <div class="img-wrapper test1">
-                <img src="img/deer.jpg" alt="사슴">
+                <div class="img-hover-effect">
+                    <img src="img/deer.jpg" alt="사슴">
+                </div>
             </div>
+
             <div class="img-wrapper test1">
-                <img src="img/fox.jpg" alt="여우">
+                <div class="img-hover-effect">
+                    <img src="img/fox.jpg" alt="여우">
+                </div>
             </div>
+
             <div class="img-wrapper test1">
-                <img src="img/lion.jpg" alt="사자">
+                <div class="img-hover-effect">
+                    <img src="img/lion.jpg" alt="사자">
+                </div>
             </div>
+
             <div class="img-wrapper test1">
-                <img src="img/rabbit.jpg" alt="토끼">
+                <div class="img-hover-effect">
+                    <img src="img/rabbit.jpg" alt="토끼">
+                </div>
             </div>
+
             <div class="img-wrapper test1">
-                <img src="img/raccoon.jpg" alt="너구리">
+                <div class="img-hover-effect">
+                    <img src="img/raccoon.jpg" alt="너구리">
+                </div>
             </div>
+
             <div class="img-wrapper test1">
-                <img src="img/wolf.jpg" alt="늑대">
+                <div class="img-hover-effect">
+                    <img src="img/wolf.jpg" alt="늑대">
+                </div>
             </div>
+
         </div>
 
         <div>
@@ -192,18 +216,23 @@
                 <div class="img-wrapper test1">
                     <img src="img/avocado.jpg" alt="아보카도">
                 </div>
+
                 <div class="img-wrapper test1">
                     <img src="img/banana.jpg" alt="바나나">
                 </div>
+
                 <div class="img-wrapper test1">
                     <img src="img/camera.jpg" alt="카메라">
                 </div>
+
                 <div class="img-wrapper test1">
                     <img src="img/melon.jpg" alt="멜론">
                 </div>
+
                 <div class="img-wrapper test1">
                     <img src="img/tape.jpg" alt="테이프">
                 </div>
+
             </div>
         </div>
     </div>
