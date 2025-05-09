@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+            border: 5px solid pink;
+        }
+
         .center {
             text-align: center;
         }
@@ -22,10 +32,10 @@
             margin: 15px;
         }
 
-        .line {
+        /* .line {
             padding-right: 20px;
             border-right: 2px solid black;
-        }
+        } */
 
         #grid {
             border: 3px solid red;
@@ -45,14 +55,86 @@
             padding: 20px;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
+        @keyframes fadeSlideIn {
+
+            /* 초기 중간 마지막 단계 총3단계를 화면에 표시 */
+            0% {
+                opacity: 0;
+                /*투명도*/
+                transform: translateY(50px) scale(0.9) rotate(-5deg);
+
+            }
+
+            50% {
+                opacity: 0.5;
+                /*투명도*/
+                transform: translateY(10px) scale(1.08) rotate(2deg);
+            }
+
+            100% {
+                opacity: 1;
+                /*투명도*/
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        /* --------------------- 순서2. 적용 ---------------------*/
+        .img-wrapper {
+            /*이미지를 둘러싼 border라인*/
+            background-color: wheat;
+            border-radius: 8px;
+            padding: 8px;
+            /* text-align: center; */
+            /* 트랜지션 작업 진행하기 
+            1. 배경색 변경, 2. 확대
+            */
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+            /* 애니메이션 적용해보기 */
+            animation-name: fadeSlideIn;
+            /*애니메이션 적용할 키프레임 이름*/
+            animation-duration: 1.5s;
+            /*얼마나 오래 지속할지*/
+            animation-timing-function: ease-in-out;
+            /*가속도 곡선..천천히진입 /중간 빠르고 /나올때천천히*/
+            animation-delay: 0.2s;
+            /*시작 전 대기시간*/
+            animation-iteration-count: 1;
+            /*반복 횟수 or infinite(무한대)*/
+            animation-direction: normal;
+            /*정방향 <-->역방향(reverse)*/
+            animation-fill-mode: both;
+            /*종료 하고나서 스타일을 유지 할지 여부... forwards, backward, both*/
+            animation-play-state: running;
+            /*계속 진행할지? 멈출지?*/
+        }
+
+        .img-wrapper:hover {
+            background-color: aqua;
+            transform: scale(1.2);
+            /* transform: rotate(45deg); */
+            /* transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 0s; */
+
+        }
+
+        .img-wrapper img {
+            /*border 라인 내 이미지*/
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            display: block;
+            /* 0 : 위쪽 , 아랫쪽 의미, auto : 좌, 우 의미 -> 가운데 정렬, 자주 쓰는 패턴 */
+            margin: 0 auto;
+        }
+
+        .test1 {
+            border: 2px solid blue;
         }
     </style>
-    
-    <h1 class="center">미니실습_250509</h1>
+
+    <h1 class="center">애니메이션효과</h1>
     <div id="grid">
         <ol>
             <li><a href="1.html">
@@ -81,27 +163,47 @@
                 </a></li>
         </ol>
 
-        <div class="line">
-            <h2>사진 갤러리</h2>
-
-            <div class="gallery">
+        <div class="container">
+            <h2 class="center">사진 갤러리</h2><br>
+            <div class="img-wrapper test1">
                 <img src="img/deer.jpg" alt="사슴">
+            </div>
+            <div class="img-wrapper test1">
                 <img src="img/fox.jpg" alt="여우">
+            </div>
+            <div class="img-wrapper test1">
                 <img src="img/lion.jpg" alt="사자">
+            </div>
+            <div class="img-wrapper test1">
                 <img src="img/rabbit.jpg" alt="토끼">
+            </div>
+            <div class="img-wrapper test1">
                 <img src="img/raccoon.jpg" alt="너구리">
+            </div>
+            <div class="img-wrapper test1">
                 <img src="img/wolf.jpg" alt="늑대">
             </div>
         </div>
 
         <div>
-            <h2>상품 목록</h2>
-            <div class="gallery">
-                <img src="img/avocado.jpg" alt="아보카도">
-                <img src="img/banana.jpg" alt="바나나">
-                <img src="img/camera.jpg" alt="카메라">
-                <img src="img/melon.jpg" alt="멜론">
-                <img src="img/tape.jpg" alt="테이프">
+
+            <div class="container">
+                <h2>상품 목록</h2><br>
+                <div class="img-wrapper test1">
+                    <img src="img/avocado.jpg" alt="아보카도">
+                </div>
+                <div class="img-wrapper test1">
+                    <img src="img/banana.jpg" alt="바나나">
+                </div>
+                <div class="img-wrapper test1">
+                    <img src="img/camera.jpg" alt="카메라">
+                </div>
+                <div class="img-wrapper test1">
+                    <img src="img/melon.jpg" alt="멜론">
+                </div>
+                <div class="img-wrapper test1">
+                    <img src="img/tape.jpg" alt="테이프">
+                </div>
             </div>
         </div>
     </div>
@@ -110,4 +212,5 @@
 </html>
 
 </body>
+
 </html>

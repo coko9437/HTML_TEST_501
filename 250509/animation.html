@@ -14,7 +14,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
             padding: 16px;
-            border: 5px solid pink;
+            border: 3px solid pink;
         }
 
         /* 애니메이션 설정 후 적용해보기 */
@@ -54,15 +54,16 @@
             animation-duration: 1.5s; /*얼마나 오래 지속할지*/
             animation-timing-function: ease-in-out; /*가속도 곡선..천천히진입 /중간 빠르고 /나올때천천히*/
             animation-delay: 0.2s; /*시작 전 대기시간*/
-            animation-iteration-count: 2; /*반복 횟수 or infinite(무한대)*/
+            animation-iteration-count: 1; /*반복 횟수 or infinite(무한대)*/
             animation-direction: normal; /*정방향 <-->역방향(reverse)*/
             animation-fill-mode: both; /*종료 하고나서 스타일을 유지 할지 여부... forwards, backward, both*/
             animation-play-state: running; /*계속 진행할지? 멈출지?*/
         }
         
         .img-wrapper:hover {
-            background-color: aqua;
-            transform: scale(1.03);
+            /* background-color: aqua; */
+            /* transform: scale(1.03); */
+            transform: rotate(25deg);
         }
 
         .img-wrapper img { /*border 라인 내 이미지*/
@@ -72,6 +73,7 @@
             display: block;
             /* 0 : 위쪽 , 아랫쪽 의미, auto : 좌, 우 의미 -> 가운데 정렬, 자주 쓰는 패턴 */
             margin: 0 auto;
+            transition: transform 0.3s;
         }
 
         .test1 {
