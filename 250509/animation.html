@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+            border: 5px solid pink;
+        }
+
+        /* 애니메이션 설정 후 적용해보기 */
+        /*---------------- 순서1. 설정, 정의 --------------*/
+        @keyframes fadeSlideIn {
+            /* 초기 중간 마지막 단계 총3단계를 화면에 표시 */
+            0% {
+                opacity: 0; /*투명도*/
+                transform: translateY(50px) scale(0.9) rotate(-5deg);
+
+            }
+
+            50% {
+                opacity: 0.5; /*투명도*/
+                transform: translateY(10px) scale(1.08) rotate(2deg);
+            }
+
+            100% {
+                opacity: 1; /*투명도*/
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        /* --------------------- 순서2. 적용 ---------------------*/
+        .img-wrapper { /*이미지를 둘러싼 border라인*/
+            background-color: wheat;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            /* 트랜지션 작업 진행하기 
+            1. 배경색 변경, 2. 확대
+            */
+            /* transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; */
+
+            /* 애니메이션 적용해보기 */
+            animation-name: fadeSlideIn; /*애니메이션 적용할 키프레임 이름*/
+            animation-duration: 1.5s; /*얼마나 오래 지속할지*/
+            animation-timing-function: ease-in-out; /*가속도 곡선..천천히진입 /중간 빠르고 /나올때천천히*/
+            animation-delay: 0.2s; /*시작 전 대기시간*/
+            animation-iteration-count: 2; /*반복 횟수 or infinite(무한대)*/
+            animation-direction: normal; /*정방향 <-->역방향(reverse)*/
+            animation-fill-mode: both; /*종료 하고나서 스타일을 유지 할지 여부... forwards, backward, both*/
+            animation-play-state: running; /*계속 진행할지? 멈출지?*/
+        }
+        
+        .img-wrapper:hover {
+            background-color: aqua;
+            transform: scale(1.03);
+        }
+
+        .img-wrapper img { /*border 라인 내 이미지*/
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            display: block;
+            /* 0 : 위쪽 , 아랫쪽 의미, auto : 좌, 우 의미 -> 가운데 정렬, 자주 쓰는 패턴 */
+            margin: 0 auto;
+        }
+
+        .test1 {
+            border: 2px solid blue;
+        }
+    </style>
+
+    <h2>나의 사진첩, Transition 테스트공간</h2>
+    <div class="container">
+        <!-- 다른 클래스를 여러개 적용시, 구분자가 공백임
+         예시) class="img-wrapper test1" ... 이건 2개의(img-wrapper, test1)
+          클래스가 적용된 상황 -->
+        <div class="img-wrapper test1">
+            <img src="img/test1.jpg" alt="샘플사진1">
+        </div>
+        <div class="img-wrapper test1">
+            <img src="img/test2.jpg" alt="샘플사진2">
+        </div>
+        <div class="img-wrapper test1">
+            <img src="img/test3.jpg" alt="샘플사진3">
+        </div>
+    </div>
+</body>
+
+</html>

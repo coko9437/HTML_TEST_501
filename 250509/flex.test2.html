@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: flex;
+            /* flex : 자동 정렬, 창이 줄어들면 같이 줄어듬 */
+            flex-wrap: wrap;
+            /* flex-wrap : 창이 줄어들면 다음칸으로 내려감 */
+            justify-content: center;
+            /* justify-content : 정렬 디폴트:start(왼쪽정렬) ... end 오른쪽정렬 */
+            align-items: center;
+            /* align-items : 교차축(세로방향) 정렬, 디폴트:start(위쪽정렬) */
+            height: 500px;
+            /* 컨테이너 높이가 없어서 값을 줌 */
+        }
+        .box{
+            border: 1px solid red;
+            width: 250px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+
+    </div>
+</body>
+
+</html>
