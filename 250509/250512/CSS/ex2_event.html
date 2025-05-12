@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>이벤트 설정 및 적용하는 방법</h1>
+        <img id="sample_img1" src="/img/test1.jpg" alt="샘플이미지1" width="10%">
+
+    <h2>1. HTML 태그 내 onXXXX 속성 직접정의</h2>
+    장점 : 단순하게 구현가능 // 재사용,가독성 안좋음<br>
+        <!-- 함수를 사용 X 구조 -->
+        <input type="button" value="test1" onclick="alert('Hi')">
+        <!-- 함수 사용 O 구조 -->
+        <input type="button" value="test2" onclick="sayHi()">
+    <br>
+    
+        
+
+
+    <h2>2. 자바스크립트에서 element.onclick 직접 할당</h2>
+    장점 : 코드를 분리시킴 // 중복 이벤트는 설정 불가.<br>
+        <input type="button" id="btn1" value="Click ME">
+    <br>
+        <input type="button" id="btn1_1" value="show">
+        <input type="button" id="btn1_2" value="hide">
+            
+
+
+    <h2>3. .addEventListener() 방식을 권장함.</h2>
+    장점 : 하나의 요소에 여러 이벤트 등록가능, 나중에 해제도 가능, 이벤트 위임도 쉬움<br>
+        <input type="button" id="btn2" value="Click ME">
+        <br>
+        <input type="button" id="btn2_1" value="show">
+        <input type="button" id="btn2_2" value="hide">
+
+
+
+    <h2>4. 기본 함수를 ES6 화살표 함수로 변경해서 더 간단히 이용해보기.</h2>
+        <input type="button" id="btn3" value="Click ME">
+        <br>
+        <input type="button" id="btn3_1" value="show">
+        <input type="button" id="btn3_2" value="hide">
+    <br>
+
+
+
+    <h2>5. 버튼하나로 IF문을 이용한 사진 ON/OFF</h2>
+        <input type="button" id="btn5" value="hide">
+
+    <script>
+            // 주의!! script 태그는 가급적이면 body태그의 가장 아래 부분에 작성하는것이 좋음.
+            // 이유? HTML 렌더링(화면을 그려주는거) 을 먼저, 자바스크립트 문법이 읽기전에
+            // 먼저 화면에 그려주는게 우선임. 그래서 맨뒤에 작성함.
+
+        //1. function 함수명(매개변수 자리) {해당기능}   <-- 베이직 작성법 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            function sayHi() {
+                alert('함수 이용한 hi')
+                }
+            // onclick 하는곳에 이 함수를 이용함. ///함수이용법 : 함수명()
+
+
+         //2. 요소.onclick = 함수를 직접 정의    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            // 요소? " document.getElementById('btn1') "<-이것 먼저 버튼을 선택한다.
+            document.getElementById('btn1').onclick = function() {
+                alert("요소에 직접 onclick 붙여서 이벤트 처리하기")
+                }
+
+            document.getElementById('btn1_1').onclick = function() {
+                document.querySelector('#sample_img1').style.display = "block"
+                }
+            document.getElementById('btn1_2').onclick = function() {
+                document.querySelector('#sample_img1').style.display = "none"
+                }
+
+
+        //3. document.getElementById('btn2') <- 특정 요소(이미지 등)를 선택 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            // const 상수명(btn) <- 변경 불가하고 재할당 안됨.
+            // ㄴ btn 은 무엇을 담고있나? btn2를 가리키고있다.
+
+            const btn = document.getElementById('btn2') 
+            btn.addEventListener('click',function() {
+                alert('방법3 이용한 이벤트 처리')
+                }
+            )
+
+            const btn2_1 = document.getElementById('btn2_1')
+            btn2_1.addEventListener('click',function() {
+                document.querySelector('#sample_img1').style.display = "block"
+                }
+            )
+
+            const btn2_2 = document.getElementById('btn2_2')
+            btn2_2.addEventListener('click',function() {
+                document.querySelector('#sample_img1').style.display = "none"
+                }
+            )
+            //btn.addEventListener('액션 행위',실행할 함수() {}
+            // ㄴ 액션행위 예시 : click / dblclick / mousemove / mousedown 등
+
+            
+        //4. 기본 함수를 ES6 화살표 함수로 변경 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+        // 화살표 함수 문법 : (매개변수) => 행위(함수의 기능)
+        // 기능을 따로따로 분리했음. 클릭, 알림 등 --> 유지보수 편함
+            const handleClick = () => alert("화살표 함수로 더 간단히 사용")
+            //요소 선택하는 방법들
+            const btn3 = document.getElementById('btn3')
+            // const btn3_0 = document.querySelector('#btn3')
+            //이벤트를 적용하는방법
+            btn3.addEventListener('click', handleClick)
+            // const handleClick2 = function test() { alert("기본 함수 이용")}
+            
+            
+
+            const btn3_1 = document.getElementById('btn3_1')
+            const btn3_2 = document.getElementById('btn3_2')
+            const Click_show = () => document.querySelector('#sample_img1').style.display = "block"
+            const Click_hide = () => document.querySelector('#sample_img1').style.display = "none"
+            btn3_1.addEventListener('click', Click_show)
+            btn3_2.addEventListener('click', Click_hide)
+            
+            // 5. 하나의 버튼으로 ON/OFF (show/hide)
+            // 처음상태는 사진 보임, 버튼은 hide
+            // 2번째 상태 : 이미지 없어진상태, 버튼은 show
+            const toggleClick = () => {
+                const img = document.querySelector('#sample_img1');
+                const toggleBtn = document.getElementById('btn5');
+            
+            //조건문 1 == "1" 값만 비교해서 true // 1 === "1" 숫자와 문자라서 False
+
+                // if (img.style.display ==='none') {
+                // img.style.display = 'block'
+                // toggleBtn.value = 'hide'
+                // } 
+                // else {
+                // img.style.display = 'none'
+                // toggleBtn.value = 'show'
+                // }
+                if (toggleBtn.value === 'show') {
+                    img.style.display = 'block'
+                    toggleBtn.value = 'hide'
+                }
+                else {
+                    img.style.display = 'none'
+                    toggleBtn.value = 'show'
+                }
+            }
+
+            //위에서 정의한 함수를 이제, 요소를 클릭 할 때마다 실행하게끔 정의. 
+            const toggleBtn2 = document.getElementById('btn5')
+            toggleBtn2.addEventListener('click', toggleClick)
+            
+            
+
+
+            // var count = 0;
+            // const btn4 = document.getElementById('btn4')
+            // const Click_if = () => 
+            //      count++;     
+            // if (count %2 == 0) {
+            //     document.querySelector('#sample_img1').style.display = "block"
+            // }else {
+            //     document.querySelector('#sample_img1').style.display = "none"
+            // }
+            // btn4.addEventListener('click', Click_if)
+            
+            // let count = 0;
+            // document.getElementById('btn4').onclick function () {
+            //     count++;
+            //     if count (count %2 ==0) {
+            //         document.querySelector('#sample_img1').style.display = "block"
+            //     } else {
+            //         document.querySelector('#sample_img1').style.display = "none"
+            //     }
+            //     document.getElementById('btn4').onclick
+            // }
+           
+    </script>
+
+</body>
+
+</html>

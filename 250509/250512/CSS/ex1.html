@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Script 태그를 이용한 연습</h1>
+
+    <script>
+        let x2 = 2 /* x2를 2에 대입.*/
+    </script>
+    
+
+
+    <h2>자바스크립트 문법 연습하는방법<h2>
+     <img id="sample_img1" src="/img/test1.jpg" alt="샘플이미지1" width="10%">
+        <h3>1.script태그 사용가능 / 2. 콘솔에서 확인가능</h3>
+        
+        <input type="button"value="hide" onclick="
+            document.querySelector('#sample_img1').style.display = 'none'">
+        <input type="button" value="show" onclick="
+            document.querySelector('#sample_img1').style.display = 'block'">
+       
+        <!-- <img id="sample_img2" src="/img/test2.jpg" alt="샘플이미지1" width="10%"> -->
+
+        <h3>문자열의 내장 기능중 length 속성 : 문자열 갯수 파악</h3>
+
+    <script>
+        document.write("문자열 내장기능 이용해서 길이 구하는예시 : " +"hello world".length)
+    </script>
+
+    <h2>자바스크립트 태그 안에서 기본 사용법1</h2>
+
+    <input type="text" placeholder="키 입력시마다 경고창 발생" 
+        onkeydown="alert('키 입력됨!')">
+
+    <!-- Javascript keydown event attribute -->
+    <input type="text" placeholder="변경될때마다 알림 발생" 
+        onchange="alert('글자 변경시마다 알림뜸')">
+
+    <input type="button" value="버튼" 
+        onclick="alert('버튼을누르셨습니다')">
+
+    <!-- <script> </script> 태그를 이용해서작업해보기 -->
+    <script>
+        document.write('hello world') /* write 함수 : 웹 브라우저 화면에 출력하는 용도*/
+        document.write('<br>')
+        document.write('월요일 화이팅')
+        document.write('<br>')
+        document.write(1 + 1)
+    </script>
+
+    <p>1+1</p>
+
+</body>
+
+</html>
