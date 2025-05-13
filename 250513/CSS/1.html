@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background: red;
+
+        }
+    </style>
+
+    <div id="box">
+
+    </div>
+
+    <script> /*const : 상수, 변경되지않음*/
+
+        // 요소를 선택, 특정 상수에 담음 / = box에 id="box"를 담음
+        const box = document.getElementById('box')
+
+        // 이벤트 적용 (함수)
+        const alertSample = () => alert("alert 테스트 함수입니다")
+        
+        const backgroundChange = () => box.style.background = 'blue'
+
+        const backgroundReChange = () => box.style.background = 'red'
+        //기능 분리
+        box.addEventListener('dblclick', alertSample)
+        box.addEventListener('mouseenter', backgroundChange)
+        box.addEventListener('mouseleave', backgroundReChange)
+        // 기본문법 : 상수(요소).addEventListener(액션행위, 실행할 함수)
+    </script>
+</body>
+
+</html>
