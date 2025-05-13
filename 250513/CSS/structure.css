@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
+/* fonts.google.com에서 'hHahmlet'폰트 IMPORT 코드 가져오기 */
+* { /* 별(*)안에 내용은 전체 적용시킴 */
+    margin: 0;
+    padding: 0;
+    /* 박스 영역은 테두리 포함 (border-box)*/
+    box-sizing: border-box; 
+    
+}
+
+a {
+    /* 기본 언더라인 제거 */
+    text-decoration: none;
+
+}
+
+ul {
+   list-style: none; 
+
+}
+
+#container {
+/* 0 : 위아래 의 마진 , auto : 왼쪽오른쪽의 마진 ==> 즉 화면 중앙 배치 */
+    margin: 0 auto;
+    width: 1200px;
+    background-color: #fff;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: blanchedalmond;
+}
+
+#logo {
+    /* float : header에서 특정 로고의 위치를 배치할 때 자주 사용함. */
+    float: left;
+    width: 250px;
+    height: 100px;
+    line-height: 100px;  /* line-height : 세로로 중간에 맞춤, 줄간격을 높이값 과 같게*/
+    padding-left: 20px;
+}
+
+#logo h1 {
+    font-family: "Hahmlet"; /*구글 폰트 적용방법*/
+    font-weight: 900;
+    font-size: 40px;
+    color: gray;
+    /* 0px : 가로 오프셋 텍스트기준으로 수평위치 양수:오른쪽 음수:왼쪽 */
+    /* -1px : 세로 오프셋 텍스트기준으로 수직위치 양수:아래 음수:위 */
+    /* 0px : 그림자의 퍼지는 정도(흐림 효과) 0이면 날카롭게 양수:부드럽게 퍼짐 */
+    /* RGB값 : 그림자의 색을 지정함 HEX,RGB,RGBA로 표현가능 */
+    text-shadow: 0px -1px 0px blue; /* 텍스트의 그림자 넣기 */
+}
+
+nav {
+    float: right;
+    width: 900px;
+    height: 100px;
+    padding-top: 40px;
+}
+
+#topMenu {
+    height: 60px;
+
+}
+
+/* topMenu의 li 만. 가리킴 */
+#topMenu > li {
+    float: left;
+    /* relative : HTML에서 요소의 위치를 기준 위치로 설정하는 속성,
+    요소를 문서 흐름안에서 유지하면서 자기 자신을 기준으로 이동할 수 있게 설정. */
+    position: relative;
+    /* top: 50px;
+    left: 200px;
+    z-index: 10; */
+}
+
+#topMenu > li > a {
+    display: block;
+    font-size: 1.1em; /* 1.1em : 부모 요소의 글꼴 크기를 기준으로, 상대 크기를 지정 => 부모의 1.1배 더 큼 */
+    /* 1em : 대략 16px */
+    font-weight: 600;
+    padding: 20px 60px;
+}
+
+/* 자주 사용하는 가상클래스 (ex :hover) 개념
+행동/요소의 위치/상태/속성/스타일을 동적으로 지정할 때 사용
+가상클래스는 , / 기호 / (:) 기준으로 사용함.
+예시) 선택자 : 가상클래스 { 
+    스타일 속성 : 값
+} */
+
+#topMenu > li > a:hover {
+    color: aqua;
+    text-shadow: 0 -5px 0 #222;
+}
+
+.contents {
+    width: 1000px;
+    margin: 50px auto; /* 위아래50px, 좌우auto*/
+}
+
+main>section {
+    margin-top: 60px;
+
+}
+
+main h2 {
+    font-size: 1.5em;
+    line-height: 2.5; /* 줄 간격 */
+}
+
+main div {
+    margin-top: 20px;
+
+}
+
+main h3 {
+    font-size: 1.2em;
+    line-height: 2.2;
+}
+
+.detail p {
+    line-height: 2.0;
+    color: #222;
+}
+
+.detail > img {
+    width: 30%;
+    float: left;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+
+.schedule ul {
+    list-style: none;
+
+}
+
+.schedule li {
+    line-height: 2.0;
+
+}
