@@ -96,12 +96,19 @@ nav {
     text-shadow: 0 -5px 0 #222;
 }
 
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더영역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
 .contents {
+    display: grid;
+    grid-template-columns: 200px 1fr;
     width: 1000px;
-    margin: 50px auto; /* 위아래50px, 좌우auto*/
+    margin-top: 30px; /* 위아래50px, 좌우auto*/
+    margin-bottom: 50px;
+    margin-left: 0px;
+
 }
 
-main>section {
+main > section {
     margin-top: 60px;
 
 }
@@ -132,6 +139,10 @@ main h3 {
     margin-right: 50px;
     border-radius: 20px;
 }
+.schedule h4 {
+    font-size: 1.2em;
+
+}
 
 .schedule ul {
     list-style: none;
@@ -141,4 +152,53 @@ main h3 {
 .schedule li {
     line-height: 2.0;
 
+}
+
+#article {
+    margin-left: 60px;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡmain 영역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+footer {
+    width: 1200px;
+    height: 100px;
+    border-top: 2px solid black;
+}
+
+#bottomMenu {
+    width: 100%;
+    height: 20px;
+    margin-left: 60px;
+
+}
+
+#bottomMenu ul {
+    margin-top: 15px;
+}
+
+#bottomMenu li {
+    float: left;
+    padding: 5px 20px;
+    border-right: 1px solid gray;
+}
+/* 마지막 요소만 가상 선 제거 */
+#bottomMenu ul li:last-child {
+    border: none;
+}
+
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+    font-size: 15px;
+    color: #666;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡfooter영역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+#sideBar {
+    width: 200px;
+    float: left;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
