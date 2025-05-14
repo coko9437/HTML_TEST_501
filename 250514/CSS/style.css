@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* <body>태그 내 전체 배경 및 폰트 설정 */
+body {
+    font-family: "Jua", sans-serif;
+    margin: 40px;
+    background: gray;
+
+    /* 회원가입 폼을 화면 정중앙에 배치 (flex 이용) ...margin 등을 줘도 됨. */
+    /* 화면 전체높이  */
+    /* height: 100vh; 해당 디스플레이를 기준으로 하겠다(100%) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 가로로 가운데*/
+    align-items: center; /* 세로로 가운데 */
+
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 폼 스타일 변경 */
+
+form {
+    background: #fff;
+    padding: 20px;
+    border: 2px solid blue;
+    width: 500px;
+    border-radius: 8px;
+
+    /* 내용 요소들을 세로정렬해보기 (flex 이용) */
+    display: flex;
+    flex-direction: column; /* 배열을 열(세로)로 함.*/
+    gap: 15px;
+
+}
+
+fieldset {
+    display: flex;
+
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+
+}
+
+fieldset {
+    
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+legend {
+    font-weight: bold;
+
+}
+
+/* 모든 입력요소들에 대해서 통일된 스타일을 적용 */
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="file"] {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    font-family: "Nanum Pen Script";
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 6px;
+}
+
+/* 프로필 이미지 모양 꾸미기 */
+#profilePreviewBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#profilePreview {
+    width: 150px;
+    height: 150px;
+    
+    /* 테두리 부분을 동그란 모양으로 만들 때 자주 쓰는 기법 */
+    border-radius: 50%;
+
+    /* 비율 유지하며 자르기 */
+    object-fit: cover;
+    border: 2px solid #ccc;
+}

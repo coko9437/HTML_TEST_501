@@ -96,12 +96,14 @@ nav {
     text-shadow: 0 -5px 0 #222;
 }
 
+
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더영역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 .contents {
     display: grid;
     grid-template-columns: 200px 1fr;
-    width: 1000px;
+    width: 1200px;
     margin-top: 30px; /* 위아래50px, 좌우auto*/
     margin-bottom: 50px;
     margin-left: 0px;
@@ -110,11 +112,12 @@ nav {
 
 main > section {
     margin-top: 60px;
-
+    /* 적용안됨 */
 }
 
 main h2 {
-    font-size: 1.5em;
+    font-size: 1.5em; 
+    
     line-height: 2.5; /* 줄 간격 */
 }
 
