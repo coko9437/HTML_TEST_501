@@ -37,7 +37,7 @@ form {
 
 }
 
-fieldset {
+/* fieldset {
     display: flex;
 
 }
@@ -46,13 +46,16 @@ label {
     display: flex;
     flex-direction: column;
 
-}
+} */
 
 fieldset {
-    
+    display: flex;
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
+    flex-wrap: wrap;
+    gap: 13px;
+    align-items: center;
 
 }
 
@@ -75,7 +78,7 @@ input[type="file"] {
 }
 
 button {
-    font-family: "Nanum Pen Script";
+    font-family: "Jua"
     font-weight: bold;
     font-size: 30px;
     padding: 10px 20px;

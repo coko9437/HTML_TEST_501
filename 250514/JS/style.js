@@ -65,18 +65,26 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
 
 })
 
-document.getElementById('signupForm').file.addEventListener
-    ('change', function () {
-        //동작원리
-        // 1) 파일선택 -> 2)선택된 파일 -> 3) 폼 양식의 파일에 변경감지 이벤트 설정
-        // ->) 4) 파일 변경될때마다 미리보기 화면의 이미지를 교체해줌
-        // this : 자기자신 =document.getElementById('signupForm').file
-        // file[0] : 현재 , 파일을 하나만 선택함.
-        const file = this.file[0]
-
-        // 파일이면서, 파일의 이미지만 출력하기
+// 프로필 이미지 변경시, 
+// 미리보기 화면에 파일 사진 나타내기
+document.getElementById('signupForm').file.addEventListener('change',
+    function () {
+        // 동작원리, 
+        // 1) 파일 선택 2) 선택된 파일 3) 폼 양식의 파일에 변경 감지 이벤트 설정
+        // 4) 파일 변경 될 때 마다 미리 보기 화면에 이미지 교체를 해줌. 
+        // this : 자기 자신, -> document.getElementById('signupForm').file
+        // files[0] : 현재, 파일을 하나만 선택을 합니다. 
+        // 그런데, 만약에 다중 파일을 선택하는 경우도 있음. 
+        // const file : 선택된 파일 이미지가 들어가 있다. 
+        const file = this.files[0]
+        // 조건, 무조건 이미지가 아님에도 화면에 출력을 할려고 하면 안됨. 
+        // 왜? 이미지만 출력이 가능하니까. 그러면  어떻게 하죠? 
+        // 검사하기 -> 파일 검사 -> 확장자가 이미지 인 경우에만 이미지로 판단
+        // 출력하기. 
+        // 유효성 체크라고 함. 
+        //검사1) 파일이 이미지인지 확인 
+        // 이미지만 출력하기
         if (file && file.type.startsWith('image/')) {
-
             // FileReader 클래스, 여러 기능이 탑재가 되어있다. 
             // 웹브라우저에서 지원 해줌. 
             // 파일 읽는 도구 : reader
@@ -105,4 +113,4 @@ document.getElementById('signupForm').file.addEventListener
             reader.readAsDataURL(file)
         }
     }
-})
+)
