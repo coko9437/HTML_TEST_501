@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+  <h3>생년월일을 입력하세요:</h3>
+  <input type="date" id="birthdate" onchange="calculateAge()" />
+  <p>나이: <span id="age">-</span> 세</p>
+
+  <script>
+    function calculateAge() {
+      const birthdateInput = document.getElementById("birthdate").value;
+      const birthDate = new Date(birthdateInput);
+      const today = new Date();
+
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      const dayDiff = today.getDate() - birthDate.getDate();
+
+      // 생일이 아직 안 지난 경우 나이에서 1을 뺌
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+      }
+
+      // 결과 표시
+      document.getElementById("age").textContent = age;
+    }
+  </script>
+</body>
+</html>
