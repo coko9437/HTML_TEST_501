@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <!-- 외부 CSS 파일 연결 -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>로그인화면 </h1>
+        <!-- <form>태그는 무언가 입력창들의 모음, 클라이언트(앞단) -->
+        <form id="signupForm">
+
+            <!-- 유저명 : 텍스트 입력창으로 만듬 -->
+            <label>
+                ID : <input type="text" name="username" placeholder="ID를 입력하세요" required>
+            </label>
+            <label>
+                <!-- 비밀번호 입력 -->
+                Password : <input type="password" name="password" placeholder="Password를 입력하세요" required>
+            </label>
+
+            <button type="submit">로그인</button>
+            <button type="reset">아이디/패스워드 찾기</button>
+        </form>
+    </div>
+
+
+    <!-- 외부 js 파일연결 -->
+    <script src="JS/login.js"></script>
+</body>
+
+</html>

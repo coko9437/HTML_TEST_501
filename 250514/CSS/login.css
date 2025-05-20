@@ -25,15 +25,16 @@ body {
 
 form {
     background: #fff;
-    padding: 20px;
-    border: 2px solid black;
+    padding: 30px;
+    border: 3px solid black;
     width: 500px;
-    border-radius: 8px;
+    height: 700px;
+    border-radius: 12px;
 
     /* 내용 요소들을 세로정렬해보기 (flex 이용) */
     display: flex;
     flex-direction: column; /* 배열을 열(세로)로 함.*/
-    gap: 15px;
+    gap: 20px;
 
 }
 
@@ -48,7 +49,7 @@ label {
 
 } */
 
-fieldset {
+/* fieldset {
     display: flex;
     border: 1px solid #ddd;
     padding: 10px;
@@ -57,56 +58,58 @@ fieldset {
     gap: 13px;
     align-items: center;
 
-}
+} */
 
-legend {
+/* legend {
     font-weight: bold;
 
-}
+} */
 
 /* 모든 입력요소들에 대해서 통일된 스타일을 적용 */
 
 input[type="text"],
-input[type="password"],
-input[type="password_checked"],
-/* input[type="number"], */
-/* input[type="date"], */
+input[type="password"] {
+/* input[type="password_checked"],
+input[type="number"],
+input[type="date"],
 input[type="email"],
-input[type="file"] {
-    width: 70%;
+input[type="file"] {  */
+    float: right;
+    font-family: "Jua", sans-serif;
+    width: 50%;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
-input[type="date"],
+/* input[type="date"],
 input[type="number"] {
     width: 20%;
     padding: 8px;
     margin-top: 5px;
-}
+} */
 
 
 button {
 
-    /* font-family: "Jua" */
+    font-family: "Jua", sans-serif;
     font-weight : bold;
     font-size: 26px;
     padding: 6px 18px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
-#result {
+/* #result {
     margin-top: 30px;
     padding: 20px;
     background: #e9ecef;
     border-radius: 6px;
 }
 
-/* 프로필 이미지 모양 꾸미기 */
+프로필 이미지 모양 꾸미기 
 #profilePreviewBox {
     display: flex;
     justify-content: center;
@@ -117,10 +120,10 @@ button {
     width: 150px;
     height: 150px;
     
-    /* 테두리 부분을 동그란 모양으로 만들 때 자주 쓰는 기법 */
+    테두리 부분을 동그란 모양으로 만들 때 자주 쓰는 기법 
     border-radius: 50%;
 
-    /* 비율 유지하며 자르기 */
+    비율 유지하며 자르기 
     object-fit: cover;
     border: 2px solid #ccc;
-}
+}  */

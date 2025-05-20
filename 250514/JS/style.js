@@ -26,6 +26,7 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
     // 2번째요소 패스워드 가져오기
     output += `출력되는 패스워드 : ${formData.get('password')}\n`
 
+    output += `출력되는 패스워드확인칸 : ${formData.get('password_checked')}\n`
     // 3번째 취미 가져오기 (다중 체크박스 처리해야함) => .getAll 사용
     const hobbies = formData.getAll('hobby') //여러개 요소를 가져와서 배열에 담기
     // hobbies 배열이기때문에 = ['게임', 독서', '영화보기']
