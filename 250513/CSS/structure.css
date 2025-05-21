@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
+
 /* fonts.google.com에서 'hHahmlet'폰트 IMPORT 코드 가져오기 */
-* { /* 별(*)안에 내용은 전체 적용시킴 */
+* {
+    /* 별(*)안에 내용은 전체 적용시킴 */
     margin: 0;
     padding: 0;
     /* 박스 영역은 테두리 포함 (border-box)*/
-    box-sizing: border-box; 
-    
+    box-sizing: border-box;
+
 }
 
 a {
@@ -15,12 +17,12 @@ a {
 }
 
 ul {
-   list-style: none; 
+    list-style: none;
 
 }
 
 #container {
-/* 0 : 위아래 의 마진 , auto : 왼쪽오른쪽의 마진 ==> 즉 화면 중앙 배치 */
+    /* 0 : 위아래 의 마진 , auto : 왼쪽오른쪽의 마진 ==> 즉 화면 중앙 배치 */
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
@@ -35,7 +37,7 @@ header {
     /* width: 100%; */
     /* height: 100px; */
     height: auto;
-    padding: 0 15px;
+    padding: 0 20px;
     background-color: blanchedalmond;
 }
 
@@ -46,13 +48,14 @@ header {
     width: 250px;
     height: 100px;
     line-height: 100px;  /* line-height : 세로로 중간에 맞춤, 줄간격을 높이값 과 같게*/
-    
+
     /* padding-left: 20px; */
     line-height: 1;
 }
 
 #logo h1 {
-    font-family: "Hahmlet"; /*구글 폰트 적용방법*/
+    font-family: "Hahmlet";
+    /*구글 폰트 적용방법*/
     font-weight: 900;
     font-size: 40px;
     color: rgb(41, 121, 32);
@@ -60,7 +63,8 @@ header {
     /* -1px : 세로 오프셋 텍스트기준으로 수직위치 양수:아래 음수:위 */
     /* 0px : 그림자의 퍼지는 정도(흐림 효과) 0이면 날카롭게 양수:부드럽게 퍼짐 */
     /* RGB값 : 그림자의 색을 지정함 HEX,RGB,RGBA로 표현가능 */
-    text-shadow: 0px -1px 0px rgb(247, 215, 5); /* 텍스트의 그림자 넣기 */
+    text-shadow: 0px -1px 0px rgb(247, 215, 5);
+    /* 텍스트의 그림자 넣기 */
 }
 
 nav {
@@ -83,13 +87,14 @@ nav {
 #menuToggle {
     display: none;
     /* 데스크탑에서는 버튼 숨김 */
-    font-size: 24px;
+    font-size: 20px;
     background: none;
-    border: none;
+    border: 1px solid gray;
     cursor: pointer;
-    color: #fff;
-    padding: 10px;
+    color: black;
+    padding: 7px;
 }
+
 /* topMenu의 li 만. 가리킴
 #topMenu > li {
     float: left;
@@ -125,7 +130,7 @@ nav {
     text-decoration: none;
 }
 
-#topMenu > li > a:hover {
+#topMenu>li>a:hover {
     color: aqua;
     text-shadow: 0 -5px 0 #222;
 }
@@ -138,21 +143,23 @@ nav {
     display: grid;
     grid-template-columns: 200px 1fr;
     width: 1000px;
-    margin-top: 30px; /* 위아래50px, 좌우auto*/
+    margin-top: 30px;
+    /* 위아래50px, 좌우auto*/
     margin-bottom: 50px;
     margin-left: 0px;
 
 }
 
-main > section {
-    margin-top: 60px;
+main>section {
+    margin-top: 40px;
     /* 적용안됨 */
 }
 
 main h2 {
-    font-size: 1.5em; 
-    
-    line-height: 2.5; /* 줄 간격 */
+    font-size: 2.0em;
+    padding-left: 100px;
+    line-height: 2.5;
+    /* 줄 간격 */
 }
 
 main div {
@@ -220,6 +227,7 @@ main h3 {
 #article {
     margin-left: 60px;
 }
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡmain 영역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* footer {
@@ -249,7 +257,8 @@ main h3 {
     border: none;
 }
 
-#bottomMenu ul li a, #bottomMenu ul li a:visited {
+#bottomMenu ul li a,
+#bottomMenu ul li a:visited {
     font-size: 15px;
     color: #666;
 }
